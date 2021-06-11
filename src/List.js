@@ -1,12 +1,12 @@
 import React from "react";
 import Item from './Item'
 
-function List() {
+function List(props) {
   return (
     <div>
-      <h2>List</h2>
+      <h2>{props.listName}</h2>
       <ul>
-        <Item />
+        <Item name={'Meu item'}/>
         <Item />
       </ul>
     </div>
