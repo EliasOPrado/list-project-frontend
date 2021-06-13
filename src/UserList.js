@@ -22,7 +22,7 @@ class UserList extends React.Component {
     return (
         <div>
            
-           {listApi.map(list => <List key={list.id}listName={list.name} />)}
+           {listApi.map(list => <List key={list.id}listName={list.name} items={list.item_set}/>)}
         </div>
     )
     }
