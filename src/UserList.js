@@ -2,7 +2,7 @@ import React from 'react'
 import List from './List'
 
 class UserList extends React.Component {
-    state = {lists: null, loading: true}
+    state = {lists: [], loading: true}
 
     async componentDidMount(){
         const config = {
@@ -18,10 +18,11 @@ class UserList extends React.Component {
         this.setState({lists:data, loading: false})
     }
     render(){
+        const listApi = this.state.lists
     return (
         <div>
-           <List listName={"Minha lista"}/> 
-           <List listName={"Minha lista 2"}/> 
+           
+           {listApi.map(list => <List key={list.id}listName={list.name} />)}
         </div>
     )
     }
