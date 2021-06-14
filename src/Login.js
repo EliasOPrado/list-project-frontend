@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import UserList from './UserList';
 
 export class Login extends Component {
     constructor(props) {
@@ -27,11 +28,16 @@ export class Login extends Component {
         };
         fetch(url , requestOptions)
             .then(response => response.json())
-            .then(data => localStorage.setItem('token', data.token));
+            .then(data => {
+                localStorage.setItem('token', data.token)
+                this.setState({token: data.token})
+             });
         event.preventDefault();
       }
     
       render() {
+          let token = localStorage.getItem('token')
+        if(!token){
         return (
           <form onSubmit={this.handleSubmit}>
             <label>
@@ -42,6 +48,9 @@ export class Login extends Component {
             <input type="submit" value="Submit" />
           </form>
         );
+    }else{
+        return <UserList />
+    }
       }
 }
 
