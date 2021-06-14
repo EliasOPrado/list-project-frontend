@@ -4,4 +4,4 @@ This is the frontend part of the project with React.
 
 <img src="public/assets/img/printscreen.png" width="40%">
 
-Click here to find the backend part with django.
+[Click here to find the backend part with django.](https://github.com/EliasOPrado/list-project-backend)
