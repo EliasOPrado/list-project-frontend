@@ -22,8 +22,8 @@ class UserList extends React.Component {
         const listApi = this.state.lists
 
         // if token is empty display the login component
-        let token = ''
-        if(token === ''){
+        let token = localStorage.getItem('token')
+        if(!token){
             return <Login />
         }else {
             return (
